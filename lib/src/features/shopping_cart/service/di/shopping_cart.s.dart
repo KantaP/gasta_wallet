@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
-import 'package:prototype/src/features/shopping_cart/data/repositories/shopping_cart.repo.dart';
-import 'package:prototype/src/features/shopping_cart/model/product.m.dart';
-import 'package:prototype/src/features/shopping_cart/service/shopping_cart.s.abs.dart';
+import 'package:gastawallet/src/features/shopping_cart/data/repositories/shopping_cart.repo.dart';
+import 'package:gastawallet/src/features/shopping_cart/model/product.m.dart';
+import 'package:gastawallet/src/features/shopping_cart/service/shopping_cart.s.abs.dart';
 
 @Injectable()
 class ShoppingCartService implements IShoppingCartService{

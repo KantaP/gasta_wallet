@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:prototype/src/data/network/dio_client.dart';
-import 'package:prototype/src/features/shopping_cart/data/network/shopping_cart.api.dart';
-import 'package:prototype/src/features/shopping_cart/model/product.m.dart';
+import 'package:gastawallet/src/data/network/dio_client.dart';
+import 'package:gastawallet/src/features/shopping_cart/data/network/shopping_cart.api.dart';
+import 'package:gastawallet/src/features/shopping_cart/model/product.m.dart';
 
 class ShoppingCartRepository {
 

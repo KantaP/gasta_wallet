@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
-import 'package:prototype/src/features/authenticate/data/local/di/user.ds.dart';
-import 'package:prototype/src/features/authenticate/model/user.m.dart';
+import 'package:gastawallet/src/features/authenticate/data/local/di/user.ds.dart';
+import 'package:gastawallet/src/features/authenticate/model/user.m.dart';
 
 class AuthenticationRepository {
 

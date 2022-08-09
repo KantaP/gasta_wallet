@@ -1,5 +1,5 @@
-import 'package:prototype/src/features/authenticate/model/user.m.dart';
-import 'package:prototype/src/model/model.abs.dart';
+import 'package:gastawallet/src/features/authenticate/model/user.m.dart';
+import 'package:gastawallet/src/model/model.abs.dart';
 
 class UserModelPersistence implements ModelJson<UserModel> {
    

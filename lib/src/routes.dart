@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/src/constants/routes.dart';
-import 'package:prototype/src/di/components/injection.dart';
-import 'package:prototype/src/features/authenticate/view/create_account.p.dart';
-import 'package:prototype/src/features/authenticate/view/di/create_account.vm.dart';
-import 'package:prototype/src/features/authenticate/view/sign_in.p.dart';
-import 'package:prototype/src/features/event/view/create_event.p.dart';
-import 'package:prototype/src/features/event/view/di/create_event.vm.dart';
-import 'package:prototype/src/features/event/view/di/event_list.vm.dart';
-import 'package:prototype/src/features/event/view/event_list.p.dart';
+import 'package:gastawallet/src/constants/routes.dart';
+import 'package:gastawallet/src/di/components/injection.dart';
+import 'package:gastawallet/src/features/authenticate/view/create_account.p.dart';
+import 'package:gastawallet/src/features/authenticate/view/di/create_account.vm.dart';
+import 'package:gastawallet/src/features/authenticate/view/sign_in.p.dart';
+import 'package:gastawallet/src/features/event/view/create_event.p.dart';
+import 'package:gastawallet/src/features/event/view/di/create_event.vm.dart';
+import 'package:gastawallet/src/features/event/view/di/event_list.vm.dart';
+import 'package:gastawallet/src/features/event/view/event_list.p.dart';
 import 'features/authenticate/view/di/sign_in.vm.dart';
 
 class AppRouter {

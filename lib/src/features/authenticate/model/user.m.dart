@@ -1,4 +1,4 @@
-import 'package:prototype/src/model/model.abs.dart';
+import 'package:gastawallet/src/model/model.abs.dart';
 
 class UserModel{
   int? id;

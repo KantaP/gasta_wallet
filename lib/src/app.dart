@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:prototype/src/constants/routes.dart';
-import 'package:prototype/src/theme/custom_theme.dart';
+import 'package:gastawallet/src/constants/routes.dart';
+import 'package:gastawallet/src/theme/custom_theme.dart';
 import 'routes.dart';
 import 'view_model/view.abs.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

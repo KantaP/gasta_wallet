@@ -1,9 +1,9 @@
 import 'package:injectable/injectable.dart';
 import 'package:logging/logging.dart';
-import 'package:prototype/src/constants/routes.dart';
-import 'package:prototype/src/features/authenticate/data/repositories/authentication.repo.dart';
-import 'package:prototype/src/view_model/app_routes.dart';
-import 'package:prototype/src/view_model/view_model.abs.dart';
+import 'package:gastawallet/src/constants/routes.dart';
+import 'package:gastawallet/src/features/authenticate/data/repositories/authentication.repo.dart';
+import 'package:gastawallet/src/view_model/app_routes.dart';
+import 'package:gastawallet/src/view_model/view_model.abs.dart';
 import 'package:rxdart/rxdart.dart';
 
 import '../../model/sign_in.st.dart';

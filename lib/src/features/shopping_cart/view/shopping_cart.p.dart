@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/src/features/shopping_cart/model/product.m.dart';
-import 'package:prototype/src/features/shopping_cart/model/shopping_cart.st.dart';
-import 'package:prototype/src/features/shopping_cart/view/di/shopping_cart.vm.dart';
-import 'package:prototype/src/features/shopping_cart/view/shopping_cart.p.abs.dart';
-import 'package:prototype/src/view_model/view.abs.dart';
+import 'package:gastawallet/src/features/shopping_cart/model/product.m.dart';
+import 'package:gastawallet/src/features/shopping_cart/model/shopping_cart.st.dart';
+import 'package:gastawallet/src/features/shopping_cart/view/di/shopping_cart.vm.dart';
+import 'package:gastawallet/src/features/shopping_cart/view/shopping_cart.p.abs.dart';
+import 'package:gastawallet/src/view_model/view.abs.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

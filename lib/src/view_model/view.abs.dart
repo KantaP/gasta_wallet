@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:logging/logging.dart';
-import 'package:prototype/src/view_model/app_routes.dart';
+import 'package:gastawallet/src/view_model/app_routes.dart';
 
 import 'view_model.abs.dart';
 

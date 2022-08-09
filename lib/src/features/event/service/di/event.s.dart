@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
-import 'package:prototype/src/features/event/data/repositories/event.repo.dart';
-import 'package:prototype/src/features/event/model/event.m.dart';
-import 'package:prototype/src/features/event/service/event.s.abs.dart';
+import 'package:gastawallet/src/features/event/data/repositories/event.repo.dart';
+import 'package:gastawallet/src/features/event/model/event.m.dart';
+import 'package:gastawallet/src/features/event/service/event.s.abs.dart';
 
 @Singleton()
 class EventService implements IEventService {

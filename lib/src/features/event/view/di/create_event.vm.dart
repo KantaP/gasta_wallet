@@ -1,9 +1,9 @@
 import 'package:injectable/injectable.dart';
-import 'package:prototype/src/features/event/model/create_event.st.dart';
-import 'package:prototype/src/features/event/model/event.m.dart';
-import 'package:prototype/src/features/event/service/di/event.s.dart';
-import 'package:prototype/src/view_model/app_routes.dart';
-import 'package:prototype/src/view_model/view_model.abs.dart';
+import 'package:gastawallet/src/features/event/model/create_event.st.dart';
+import 'package:gastawallet/src/features/event/model/event.m.dart';
+import 'package:gastawallet/src/features/event/service/di/event.s.dart';
+import 'package:gastawallet/src/view_model/app_routes.dart';
+import 'package:gastawallet/src/view_model/view_model.abs.dart';
 import 'package:rxdart/rxdart.dart';
 
 @Injectable()

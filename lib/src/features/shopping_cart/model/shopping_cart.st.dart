@@ -1,5 +1,5 @@
-import 'package:prototype/src/features/shopping_cart/model/product.m.dart';
-import 'package:prototype/src/view_model/page_state.abs.dart';
+import 'package:gastawallet/src/features/shopping_cart/model/product.m.dart';
+import 'package:gastawallet/src/view_model/page_state.abs.dart';
 
 class ShoppingCartPageState implements IPageState<ShoppingCartPageState> {
 

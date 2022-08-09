@@ -1,11 +1,11 @@
 
 
 import 'package:dio/dio.dart';
-import 'package:prototype/src/constants/api.dart';
-import 'package:prototype/src/data/network/api_client.dart';
-import 'package:prototype/src/features/event/data/network/event.api.abs.dart';
-import 'package:prototype/src/features/event/model/event.m.dart';
-import 'package:prototype/src/features/event/model/event.m.p.dart';
+import 'package:gastawallet/src/constants/api.dart';
+import 'package:gastawallet/src/data/network/api_client.dart';
+import 'package:gastawallet/src/features/event/data/network/event.api.abs.dart';
+import 'package:gastawallet/src/features/event/model/event.m.dart';
+import 'package:gastawallet/src/features/event/model/event.m.p.dart';
 
 class EventApiClient extends ApiClient implements IEventApiClient {
 

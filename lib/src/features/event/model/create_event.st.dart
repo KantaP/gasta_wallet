@@ -1,4 +1,4 @@
-import 'package:prototype/src/view_model/page_state.abs.dart';
+import 'package:gastawallet/src/view_model/page_state.abs.dart';
 
 class CreateEventState implements IPageState<CreateEventState> {
   String _name = "";

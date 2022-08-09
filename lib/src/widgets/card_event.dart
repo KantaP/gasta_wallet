@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/src/constants/assets.dart';
+import 'package:gastawallet/src/constants/assets.dart';
 
 class CardEvent extends StatelessWidget {
 

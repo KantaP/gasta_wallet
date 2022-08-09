@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/src/features/shopping_cart/model/product.m.dart';
+import 'package:gastawallet/src/features/shopping_cart/model/product.m.dart';
 
 
 abstract class IShoppingCartPage {

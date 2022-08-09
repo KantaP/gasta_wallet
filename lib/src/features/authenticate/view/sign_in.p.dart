@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/src/constants/assets.dart';
-import 'package:prototype/src/features/authenticate/view/di/sign_in.vm.dart';
-import 'package:prototype/src/view_model/view.abs.dart';
+import 'package:gastawallet/src/constants/assets.dart';
+import 'package:gastawallet/src/features/authenticate/view/di/sign_in.vm.dart';
+import 'package:gastawallet/src/view_model/view.abs.dart';
 
 import '../model/sign_in.st.dart';
 

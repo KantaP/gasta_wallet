@@ -1,5 +1,5 @@
-import 'package:prototype/src/features/event/model/event.m.dart';
-import 'package:prototype/src/view_model/page_state.abs.dart';
+import 'package:gastawallet/src/features/event/model/event.m.dart';
+import 'package:gastawallet/src/view_model/page_state.abs.dart';
 
 class EventListState implements IPageState<EventListState> {
 

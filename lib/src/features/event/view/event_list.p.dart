@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/src/features/event/model/event_list.st.dart';
-import 'package:prototype/src/features/event/view/di/event_list.vm.dart';
-import 'package:prototype/src/view_model/view.abs.dart';
-import 'package:prototype/src/widgets/card_event.dart';
-import 'package:prototype/src/widgets/loading.dart';
+import 'package:gastawallet/src/features/event/model/event_list.st.dart';
+import 'package:gastawallet/src/features/event/view/di/event_list.vm.dart';
+import 'package:gastawallet/src/view_model/view.abs.dart';
+import 'package:gastawallet/src/widgets/card_event.dart';
+import 'package:gastawallet/src/widgets/loading.dart';
 
 class EventListPage extends View<EventListViewModel> {
   const EventListPage({required EventListViewModel viewModel, Key? key})

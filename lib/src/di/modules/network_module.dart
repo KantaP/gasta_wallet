@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logging/logging.dart';
-import 'package:prototype/src/constants/api.dart';
+import 'package:gastawallet/src/constants/api.dart';
 
 @module
 abstract class NetworkModule {

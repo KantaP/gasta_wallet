@@ -1,8 +1,8 @@
 
 import 'package:injectable/injectable.dart';
-import 'package:prototype/src/features/shopping_cart/service/di/shopping_cart.s.dart';
-import 'package:prototype/src/view_model/app_routes.dart';
-import 'package:prototype/src/view_model/view_model.abs.dart';
+import 'package:gastawallet/src/features/shopping_cart/service/di/shopping_cart.s.dart';
+import 'package:gastawallet/src/view_model/app_routes.dart';
+import 'package:gastawallet/src/view_model/view_model.abs.dart';
 import 'package:rxdart/subjects.dart';
 
 import '../../model/shopping_cart.st.dart';

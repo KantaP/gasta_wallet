@@ -1,6 +1,6 @@
-import 'package:prototype/src/data/network/dio_client.dart';
-import 'package:prototype/src/features/event/data/network/event.api.dart';
-import 'package:prototype/src/features/event/model/event.m.dart';
+import 'package:gastawallet/src/data/network/dio_client.dart';
+import 'package:gastawallet/src/features/event/data/network/event.api.dart';
+import 'package:gastawallet/src/features/event/model/event.m.dart';
 
 class EventRepository {
 

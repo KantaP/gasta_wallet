@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/src/features/authenticate/model/create_account.st.dart';
-import 'package:prototype/src/features/authenticate/view/di/create_account.vm.dart';
-import 'package:prototype/src/view_model/view.abs.dart';
-import 'package:prototype/src/widgets/checkbox_field.dart';
+import 'package:gastawallet/src/features/authenticate/model/create_account.st.dart';
+import 'package:gastawallet/src/features/authenticate/view/di/create_account.vm.dart';
+import 'package:gastawallet/src/view_model/view.abs.dart';
+import 'package:gastawallet/src/widgets/checkbox_field.dart';
 
 class CreateAccountPage extends View<CreateAccountViewModel> {
   const CreateAccountPage({required CreateAccountViewModel viewModel, Key? key})

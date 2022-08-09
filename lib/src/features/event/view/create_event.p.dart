@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/src/features/event/model/create_event.st.dart';
-import 'package:prototype/src/features/event/view/di/create_event.vm.dart';
-import 'package:prototype/src/view_model/view.abs.dart';
-import 'package:prototype/src/widgets/loading.dart';
+import 'package:gastawallet/src/features/event/model/create_event.st.dart';
+import 'package:gastawallet/src/features/event/view/di/create_event.vm.dart';
+import 'package:gastawallet/src/view_model/view.abs.dart';
+import 'package:gastawallet/src/widgets/loading.dart';
 
 class CreateEventPage extends View<CreateEventViewModel> {
   const CreateEventPage({required CreateEventViewModel viewModel, Key? key})

@@ -1,4 +1,4 @@
-import 'package:prototype/src/data/network/dio_client.dart';
+import 'package:gastawallet/src/data/network/dio_client.dart';
 
 
 class ApiClient  {

@@ -1,8 +1,8 @@
-import 'package:prototype/src/constants/api.dart';
-import 'package:prototype/src/data/network/dio_client.dart';
-import 'package:prototype/src/di/components/injection.dart';
-import 'package:prototype/src/features/shopping_cart/data/repositories/shopping_cart.repo.dart';
-import 'package:prototype/src/features/shopping_cart/view/di/shopping_cart.vm.dart';
+import 'package:gastawallet/src/constants/api.dart';
+import 'package:gastawallet/src/data/network/dio_client.dart';
+import 'package:gastawallet/src/di/components/injection.dart';
+import 'package:gastawallet/src/features/shopping_cart/data/repositories/shopping_cart.repo.dart';
+import 'package:gastawallet/src/features/shopping_cart/view/di/shopping_cart.vm.dart';
 
 import 'package:dio/dio.dart';
 import 'package:http_mock_adapter/http_mock_adapter.dart';

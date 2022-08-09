@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import 'package:prototype/src/features/authenticate/data/local/di/user.ds.dart';
-import 'package:prototype/src/features/authenticate/data/repositories/authentication.repo.dart';
-import 'package:prototype/src/features/authenticate/model/create_account.st.dart';
-import 'package:prototype/src/features/authenticate/model/user.m.dart';
-import 'package:prototype/src/view_model/app_routes.dart';
-import 'package:prototype/src/view_model/view_model.abs.dart';
+import 'package:gastawallet/src/features/authenticate/data/local/di/user.ds.dart';
+import 'package:gastawallet/src/features/authenticate/data/repositories/authentication.repo.dart';
+import 'package:gastawallet/src/features/authenticate/model/create_account.st.dart';
+import 'package:gastawallet/src/features/authenticate/model/user.m.dart';
+import 'package:gastawallet/src/view_model/app_routes.dart';
+import 'package:gastawallet/src/view_model/view_model.abs.dart';
 import 'package:rxdart/rxdart.dart';
 
 @Injectable()

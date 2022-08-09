@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logging/logging.dart';
-import 'package:prototype/src/di/components/injection.dart';
+import 'package:gastawallet/src/di/components/injection.dart';
 
 import 'src/app.dart';
 

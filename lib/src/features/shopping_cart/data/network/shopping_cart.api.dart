@@ -1,11 +1,11 @@
 
 
 import 'package:dio/dio.dart';
-import 'package:prototype/src/constants/api.dart';
-import 'package:prototype/src/data/network/api_client.dart';
-import 'package:prototype/src/features/shopping_cart/data/network/shopping_cart.api.abs.dart';
-import 'package:prototype/src/features/shopping_cart/model/product.m.dart';
-import 'package:prototype/src/features/shopping_cart/model/product.m.p.dart';
+import 'package:gastawallet/src/constants/api.dart';
+import 'package:gastawallet/src/data/network/api_client.dart';
+import 'package:gastawallet/src/features/shopping_cart/data/network/shopping_cart.api.abs.dart';
+import 'package:gastawallet/src/features/shopping_cart/model/product.m.dart';
+import 'package:gastawallet/src/features/shopping_cart/model/product.m.p.dart';
 
 class ShoppingCartApiClient extends ApiClient implements IShoppingCartApiClient {
 

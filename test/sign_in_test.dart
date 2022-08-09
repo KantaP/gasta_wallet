@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:prototype/src/di/components/injection.dart';
-import 'package:prototype/src/features/authenticate/data/repositories/authentication.repo.dart';
-import 'package:prototype/src/features/authenticate/view/di/sign_in.vm.dart';
-import 'package:prototype/src/view_model/app_routes.dart';
+import 'package:gastawallet/src/di/components/injection.dart';
+import 'package:gastawallet/src/features/authenticate/data/repositories/authentication.repo.dart';
+import 'package:gastawallet/src/features/authenticate/view/di/sign_in.vm.dart';
+import 'package:gastawallet/src/view_model/app_routes.dart';
 import 'package:test/test.dart';
 
 void main() {
