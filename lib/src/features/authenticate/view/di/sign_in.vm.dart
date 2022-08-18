@@ -1,3 +1,4 @@
+import 'package:gastawallet/src/features/authenticate/service/di/authentication.firebase.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logging/logging.dart';
 import 'package:gastawallet/src/constants/routes.dart';
@@ -12,7 +13,8 @@ import '../../model/sign_in.st.dart';
 class SignInPageViewModel extends ViewModel {
 
   final AuthenticationRepository _repository;
-  SignInPageViewModel(this._repository);
+  final AuthenticationFirebaseService _service;
+  SignInPageViewModel(this._repository, this._service);
 
   final _stateSubject =
       BehaviorSubject<SignInPageState>.seeded(SignInPageState());
@@ -33,15 +35,18 @@ class SignInPageViewModel extends ViewModel {
 
   void signIn() async {
     final state = _stateSubject.value;
-    final result = await _repository.getUserByFilter(<String, dynamic> {
-      "username" : state.username,
-      "password" : state.password,
-    });
+    // final result = await _repository.getUserByFilter(<String, dynamic> {
+    //   "username" : state.username,
+    //   "password" : state.password,
+    // });
 
-    if(result == null) return;
-    if(result.isNotEmpty) {
-      _routesSubject.add(const AppRouteSpec(name: RoutesConstant.home , action: AppRouteAction.replaceAllWith));
-    }
+    // if(result == null) return;
+    // if(result.isNotEmpty) {
+    //   _routesSubject.add(const AppRouteSpec(name: RoutesConstant.home , action: AppRouteAction.replaceAllWith));
+    // }
+
+    final result = await _service.signInWithEmailAndPassword(state.username, state.password);
+    print(result);
   }
 
   void goToCreateAccount() {

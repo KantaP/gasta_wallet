@@ -32,7 +32,6 @@ class _EventListPage extends ViewState<EventListPage, EventListViewModel> {
   void didPush() {
     super.didPush();
     viewModel.getEvents();
-    
   }
 
   @override

@@ -1,8 +1,10 @@
 class RoutesConstant {
   RoutesConstant._();
 
-  static const String home = "/home";
+  static const String splashScreen = "/";
   static const String createEvent = "/create-event";
-  static const String userSignIn = "/";
+  static const String userSignIn = "/sign-in";
+  static const String home = "/home";
   static const String createAccount = "/create-account";
+  static const String setPin = "/set-pin";
 }

@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: CustomTheme.lightTheme,
       navigatorObservers: [routeObserver],
-      initialRoute: RoutesConstant.userSignIn,
+      initialRoute: RoutesConstant.splashScreen,
       onGenerateRoute: _router.route,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,

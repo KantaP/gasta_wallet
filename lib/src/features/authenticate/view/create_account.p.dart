@@ -29,80 +29,82 @@ class _CreateAccountPageState
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<CreateAccountState>(
-        stream: viewModel.state,
-        builder: (context, snapshot) {
-          if (!snapshot.hasData)
-            return Container(); //something went wrong. cannot get state from viewmodel
-          final state = snapshot.data!;
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Stack(
+          children: [
+            IconButton(
+              onPressed: () => viewModel.goBack(),
+              icon: const Icon(Icons.arrow_back),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                  left: 32.0, right: 32.0, top: kToolbarHeight),
+              child: IntrinsicWidth(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Center(
+                      child: Text(
+                        "Create Account",
+                        style: Theme.of(context).textTheme.headline4,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 16.0),
+                      child: TextField(
+                        decoration: const InputDecoration(
+                            labelText: 'Email', isDense: false),
+                        controller: _usernameController,
+                        onChanged: (value) {
+                          viewModel.updateState(<String, dynamic>{
+                            CreateAccountFields.username: value
+                          });
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: TextField(
+                        obscureText: true,
+                        enableSuggestions: false,
+                        autocorrect: false,
+                        decoration: const InputDecoration(
+                            labelText: 'Password', isDense: false),
+                        controller: _passwordController,
+                        onChanged: (value) {
+                          viewModel.updateState(<String, dynamic>{
+                            CreateAccountFields.password: value
+                          });
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: TextField(
+                        obscureText: true,
+                        enableSuggestions: false,
+                        autocorrect: false,
+                        decoration: const InputDecoration(
+                            labelText: 'Confirm Password', isDense: false),
+                        controller: _confirmPasswordController,
+                        onChanged: (value) {
+                          viewModel.updateState(<String, dynamic>{
+                            CreateAccountFields.confirmPassword: value
+                          });
+                        },
+                      ),
+                    ),
+                    StreamBuilder<CreateAccountState>(
+                      stream: viewModel.state,
+                      builder: (context, snapshot) {
+                        if (!snapshot.hasData) {
+                          return Container();
+                        } //something went wrong. cannot get state from viewmodel
+                        final state = snapshot.data!;
 
-          return Scaffold(
-            backgroundColor: Colors.white,
-            body: SafeArea(
-              child: Stack(children: [
-                IconButton(
-                  onPressed: () => viewModel.goBack(),
-                  icon: const Icon(Icons.arrow_back),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                      left: 32.0, right: 32.0, top: kToolbarHeight),
-                  child: IntrinsicWidth(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Center(
-                          child: Text(
-                            "Create Account",
-                            style: Theme.of(context).textTheme.headline4,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 16.0),
-                          child: TextField(
-                            decoration: const InputDecoration(
-                                labelText: 'Email', isDense: false),
-                            controller: _usernameController,
-                            onChanged: (value) {
-                              viewModel.updateState(<String, dynamic>{
-                                CreateAccountFields.username: value
-                              });
-                            },
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
-                          child: TextField(
-                            obscureText: true,
-                            enableSuggestions: false,
-                            autocorrect: false,
-                            decoration: const InputDecoration(
-                                labelText: 'Password', isDense: false),
-                            controller: _passwordController,
-                            onChanged: (value) {
-                              viewModel.updateState(<String, dynamic>{
-                                CreateAccountFields.password: value
-                              });
-                            },
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
-                          child: TextField(
-                            obscureText: true,
-                            enableSuggestions: false,
-                            autocorrect: false,
-                            decoration: const InputDecoration(
-                                labelText: 'Confirm Password', isDense: false),
-                            controller: _confirmPasswordController,
-                            onChanged: (value) {
-                              viewModel.updateState(<String, dynamic>{
-                                CreateAccountFields.confirmPassword: value
-                              });
-                            },
-                          ),
-                        ),
-                        Padding(
+                        return Padding(
                           padding: const EdgeInsets.only(top: 32.0),
                           child: CheckBoxField(
                             value: state.acceptTerm,
@@ -114,21 +116,23 @@ class _CreateAccountPageState
                               });
                             },
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 32.0),
-                          child: ElevatedButton(
-                            onPressed: () => viewModel.createUser(context),
-                            child: const Text('Confirm'),
-                          ),
-                        ),
-                      ],
+                        );
+                      },
                     ),
-                  ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 32.0),
+                      child: ElevatedButton(
+                        onPressed: () => viewModel.createAccountByEmail(),
+                        child: const Text('Confirm'),
+                      ),
+                    ),
+                  ],
                 ),
-              ]),
+              ),
             ),
-          );
-        });
+          ],
+        ),
+      ),
+    );
   }
 }
