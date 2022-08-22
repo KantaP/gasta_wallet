@@ -32,22 +32,21 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   logging: ^1.0.2
   rxdart: ^0.27.4
-  test:
+  test: null
   path: ^1.8.1
   shared_preferences: ^2.0.15
 
   #network client
-  dio:
+  dio: null
 
   #dependency injection
-  get_it: 
-  injectable: 
+  get_it: null
+  injectable: null
 
   #language
   intl: ^0.17.0-nullsafety.2
@@ -59,7 +58,6 @@ dependencies:
   firebase_core: ^1.20.0
   firebase_auth: ^3.6.2
   firebase_database: ^9.1.1
-  
 
 dev_dependencies:
   flutter_test:
@@ -71,16 +69,13 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
-  build_runner: 
-  injectable_generator:
-  mockito:
-  http_mock_adapter:
-
-
+  build_runner: null
+  injectable_generator: null
+  mockito: null
+  http_mock_adapter: null
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter packages.
 flutter:
 
@@ -95,10 +90,8 @@ flutter:
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
@@ -119,3 +112,5 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
   generate: true
+flutter_intl:
+  enabled: true

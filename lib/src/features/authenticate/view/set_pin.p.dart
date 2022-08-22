@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gastawallet/generated/l10n.dart';
 import 'package:gastawallet/src/features/authenticate/view/di/set_pin.vm.dart';
 import 'package:gastawallet/src/view_model/view.abs.dart';
-
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SetPinPage extends View<SetPinViewModel> {
 
@@ -27,7 +26,7 @@ class _SetPinPageState extends ViewState<SetPinPage , SetPinViewModel> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context).setPinTitle),
+        title: Text(S.of(context).setPinTitle),
       ),
       body: Column(
         children: <Widget>[

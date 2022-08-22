@@ -8,7 +8,9 @@ import 'package:gastawallet/src/features/authenticate/view/set_pin.p.dart';
 import 'package:gastawallet/src/features/authenticate/view/sign_in.p.dart';
 import 'package:gastawallet/src/features/event/view/create_event.p.dart';
 import 'package:gastawallet/src/features/event/view/di/create_event.vm.dart';
+import 'package:gastawallet/src/features/introduction/view/di/getting_started.vm.dart';
 import 'package:gastawallet/src/features/introduction/view/di/splash_screen.vm.dart';
+import 'package:gastawallet/src/features/introduction/view/getting_started.p.dart';
 import 'package:gastawallet/src/features/introduction/view/splash_screen.p.dart';
 import 'package:gastawallet/src/features/main/view/di/main.vm.dart';
 import 'package:gastawallet/src/features/main/view/main.p.dart';
@@ -52,6 +54,12 @@ class AppRouter {
           // Make sure to pass `setting` in to ensure the route name is kept 
           settings: settings,
           builder: (_) => SetPinPage(viewModel: getIt<SetPinViewModel>()),
+        );
+      case RoutesConstant.gettingStarted:
+        return MaterialPageRoute(
+          // Make sure to pass `setting` in to ensure the route name is kept 
+          settings: settings,
+          builder: (_) => GettingStartedPage(viewModel: getIt<GettingStartedViewModel>()),
         );
       default:
         throw Exception('Route ${settings.name} not implemented');

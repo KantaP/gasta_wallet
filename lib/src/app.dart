@@ -1,18 +1,14 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:gastawallet/generated/l10n.dart';
 import 'package:gastawallet/src/constants/routes.dart';
 import 'package:gastawallet/src/theme/custom_theme.dart';
 import 'routes.dart';
 import 'view_model/view.abs.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 
 class MyApp extends StatelessWidget {
-
   MyApp({Key? key}) : super(key: key);
   final _router = AppRouter();
-  
 
   // This widget is the root of your application.
   @override
@@ -23,8 +19,13 @@ class MyApp extends StatelessWidget {
       navigatorObservers: [routeObserver],
       initialRoute: RoutesConstant.splashScreen,
       onGenerateRoute: _router.route,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       debugShowCheckedModeBanner: false,
     );
   }

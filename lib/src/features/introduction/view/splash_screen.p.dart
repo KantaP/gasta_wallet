@@ -25,7 +25,7 @@ class _SplashScreenPageState extends ViewState<SplashScreenPage , SplashScreenVi
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    viewModel.checkAuth();
+    viewModel.showGettingStarted();
   }
   
   @override

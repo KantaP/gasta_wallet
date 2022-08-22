@@ -1,0 +1,32 @@
+{
+    "helloWorld": "Hello World!",
+    "@helloWorld": {
+      "description": "The conventional newborn programmer greeting"
+    },
+
+    "setPinTitle" : "Set Pin",
+    "@setPinTitle" : {
+      "description": "The title of setpin page"
+    },
+
+    "gettingStartedInfoOneTitle" : "Take hold of your finances",
+    "@gettingStartedInfoOneTitle" : {
+      "description" : "The title of 1st info getting started"
+    },
+    "gettingStartedInfoOneContent" : "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien.",
+    "gettingStartedInfoOneButton" : "Next",
+
+    "gettingStartedInfoTwoTitle" : "Buy and Sell Crypto",
+    "@gettingStartedInfoTwoTitle" : {
+      "description" : "The title of 2nd info getting started"
+    },
+    "gettingStartedInfoTwoContent" : "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien.",
+    "gettingStartedInfoTwoButton" : "Next" ,
+
+    "gettingStartedInfoThreeTitle" : "Smart trading tools",
+    "@gettingStartedInfoThreeTitle" : {
+      "description" : "The title of 3nd info getting started"
+    },
+    "gettingStartedInfoThreeContent" : "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien.",
+    "gettingStartedInfoThreeButton" : "Get Started"
+}

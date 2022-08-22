@@ -37,7 +37,6 @@ class SplashScreenViewModel extends ViewModel {
   void checkAuth() {
     User? currentUser = _service.currentUser();
     if(currentUser != null) {
-      print('go to home');
       Future.delayed(const Duration(milliseconds: 1000), () {
         _routesSubject.add(const AppRouteSpec(name: RoutesConstant.home, action: AppRouteAction.replaceWith));
       });
@@ -45,9 +44,13 @@ class SplashScreenViewModel extends ViewModel {
       Future.delayed(const Duration(milliseconds: 1000), () {
         _routesSubject.add(const AppRouteSpec(name: RoutesConstant.userSignIn, action: AppRouteAction.replaceWith));
       });
-    }
-    
-    
+    }    
+  }
+
+  void showGettingStarted() {
+    Future.delayed(const Duration(milliseconds: 1000), () {
+        _routesSubject.add(const AppRouteSpec(name: RoutesConstant.gettingStarted, action: AppRouteAction.replaceWith));
+    });
   }
 
 }
