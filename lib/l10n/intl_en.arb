@@ -4,29 +4,70 @@
       "description": "The conventional newborn programmer greeting"
     },
 
-    "setPinTitle" : "Set Pin",
+    "termsOfServices" : "Terms of services",
+    "privacyPolicy" : "Privacy policy",
+    
+    "setPinStart" : "====================================================================",
+    "setPinTitle" : "Create Account",
     "@setPinTitle" : {
       "description": "The title of setpin page"
     },
+    "setPinHeadline" : "Create a PIN" ,
+    "confirmPinHeadline" : "Confirm a PIN",
+    "setPinContent" : "To keep your funds secure, you will use this PIN to open your app",
+    "confirmPinContent" : "For your security, Please confirm your PIN by typing again",
+    "setPinEnd" : "====================================================================",
 
+
+    "gettingStartedStart" : "====================================================================",
     "gettingStartedInfoOneTitle" : "Take hold of your finances",
     "@gettingStartedInfoOneTitle" : {
       "description" : "The title of 1st info getting started"
     },
     "gettingStartedInfoOneContent" : "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien.",
-    "gettingStartedInfoOneButton" : "Next",
 
     "gettingStartedInfoTwoTitle" : "Buy and Sell Crypto",
     "@gettingStartedInfoTwoTitle" : {
       "description" : "The title of 2nd info getting started"
     },
     "gettingStartedInfoTwoContent" : "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien.",
-    "gettingStartedInfoTwoButton" : "Next" ,
 
     "gettingStartedInfoThreeTitle" : "Smart trading tools",
     "@gettingStartedInfoThreeTitle" : {
       "description" : "The title of 3nd info getting started"
     },
     "gettingStartedInfoThreeContent" : "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien.",
-    "gettingStartedInfoThreeButton" : "Get Started"
+    
+    "gettingStartedInfoNext" : "Next",
+    "gettingStartedInfoSubmit" : "Get Started" ,
+    "gettingStartedEnd" : "====================================================================",
+
+    "createAccountStart" : "====================================================================",
+    "createAccountTitle" : "Create account" ,
+    "createAccountMobileLabel" : "Mobile number",
+    "createAccountAgreeTerm" : "I agree to GASTA Terms of services and Privacy policy",
+    "createAccountSubmitButton" : "Create account",
+    "createdAccountEnd" : "====================================================================",
+    
+    "otpVerificationStart" : "====================================================================",
+    "otpVerificationTitle" : "Create account",
+    "otpVerificationHeadline" : "Thanks for signing up with",
+    "otpVerificationContent" : "Enter the SMS verification code you received",
+    "otpVerificationDidNotGetCode" : "Didn’t get the code?",
+    "otpVerificationResendSMS" : "Resend SMS",
+    "otpVerificationEnd" : "====================================================================" ,
+
+    "signInStart" : "====================================================================",
+    "signInHeadline" : "Gasta" ,
+    "signInContent"  : "Hello! Welcome to GASTA Start your investment today" ,
+    "signInAlreadyAccountContent" : "Already have an account?" ,
+    "signInAlreadyAccountAction" : "Sign in",
+    "signInCreateAccountButton" : "Create account",
+    "signInEnd" : "====================================================================" ,
+
+    "phoneAuthStart" : "====================================================================",
+    "phoneAuthTitle" : "Sign in with phone number" ,
+    "phoneAuthMobileLabel" : "Mobile number",
+    "phoneAuthSubmitButton" : "Sign in",
+    "phoneAuthEnd" : "===================================================================="
 }

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:gastawallet/generated/l10n.dart';
 import 'package:gastawallet/src/features/authenticate/model/create_account.st.dart';
 import 'package:gastawallet/src/features/authenticate/view/di/create_account.vm.dart';
 import 'package:gastawallet/src/view_model/view.abs.dart';
 import 'package:gastawallet/src/widgets/checkbox_field.dart';
+import 'package:gastawallet/src/widgets/custom_text_field.dart';
+import 'package:gastawallet/src/widgets/phone_text_field.dart';
 
 class CreateAccountPage extends View<CreateAccountViewModel> {
   const CreateAccountPage({required CreateAccountViewModel viewModel, Key? key})
@@ -14,10 +17,6 @@ class CreateAccountPage extends View<CreateAccountViewModel> {
 
 class _CreateAccountPageState
     extends ViewState<CreateAccountPage, CreateAccountViewModel> {
-  final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController =
-      TextEditingController();
 
   _CreateAccountPageState(super.viewModel);
 
@@ -30,107 +29,64 @@ class _CreateAccountPageState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text(
+          S.of(context).createAccountTitle,
+        ),
+      ),
       body: SafeArea(
-        child: Stack(
-          children: [
-            IconButton(
-              onPressed: () => viewModel.goBack(),
-              icon: const Icon(Icons.arrow_back),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 32.0, right: 32.0, top: kToolbarHeight),
-              child: IntrinsicWidth(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Center(
-                      child: Text(
-                        "Create Account",
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16.0),
-                      child: TextField(
-                        decoration: const InputDecoration(
-                            labelText: 'Email', isDense: false),
-                        controller: _usernameController,
-                        onChanged: (value) {
-                          viewModel.updateState(<String, dynamic>{
-                            CreateAccountFields.username: value
-                          });
-                        },
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: TextField(
-                        obscureText: true,
-                        enableSuggestions: false,
-                        autocorrect: false,
-                        decoration: const InputDecoration(
-                            labelText: 'Password', isDense: false),
-                        controller: _passwordController,
-                        onChanged: (value) {
-                          viewModel.updateState(<String, dynamic>{
-                            CreateAccountFields.password: value
-                          });
-                        },
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: TextField(
-                        obscureText: true,
-                        enableSuggestions: false,
-                        autocorrect: false,
-                        decoration: const InputDecoration(
-                            labelText: 'Confirm Password', isDense: false),
-                        controller: _confirmPasswordController,
-                        onChanged: (value) {
-                          viewModel.updateState(<String, dynamic>{
-                            CreateAccountFields.confirmPassword: value
-                          });
-                        },
-                      ),
-                    ),
-                    StreamBuilder<CreateAccountState>(
-                      stream: viewModel.state,
-                      builder: (context, snapshot) {
-                        if (!snapshot.hasData) {
-                          return Container();
-                        } //something went wrong. cannot get state from viewmodel
-                        final state = snapshot.data!;
-
-                        return Padding(
-                          padding: const EdgeInsets.only(top: 32.0),
-                          child: CheckBoxField(
-                            value: state.acceptTerm,
-                            label:
-                                "I have read and agree to the terms of service",
-                            onChanged: (value) {
-                              viewModel.updateState(<String, dynamic>{
-                                CreateAccountFields.acceptTerm: value
-                              });
-                            },
-                          ),
-                        );
+        child: Padding(
+          padding: const EdgeInsets.only(left: 16, right: 16),
+          child: IntrinsicWidth(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Padding(
+                    padding: const EdgeInsets.only(top: 16.0),
+                    child: PhoneTextField(
+                      label: S.of(context).createAccountMobileLabel,
+                      onChanged: (value) {
+                        viewModel.updateState(<String, dynamic>{
+                          CreateAccountFields.mobileNumber: value
+                        });
                       },
-                    ),
-                    Padding(
+                    )),
+                StreamBuilder<CreateAccountState>(
+                  stream: viewModel.state,
+                  builder: (context, snapshot) {
+                    if (!snapshot.hasData) {
+                      return Container();
+                    } //something went wrong. cannot get state from viewmodel
+                    final state = snapshot.data!;
+
+                    return Padding(
                       padding: const EdgeInsets.only(top: 32.0),
-                      child: ElevatedButton(
-                        onPressed: () => viewModel.createAccountByEmail(),
-                        child: const Text('Confirm'),
+                      child: CheckBoxField(
+                        value: state.acceptTerm,
+                        label: S.of(context).createAccountAgreeTerm,
+                        onChanged: (value) {
+                          viewModel.updateState(<String, dynamic>{
+                            CreateAccountFields.acceptTerm: value
+                          });
+                        },
                       ),
-                    ),
-                  ],
+                    );
+                  },
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 32.0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      FocusScope.of(context).unfocus();
+                      viewModel.verifyPhoneNumber();
+                    },
+                    child: Text(
+                        S.of(context).createAccountSubmitButton.toUpperCase()),
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

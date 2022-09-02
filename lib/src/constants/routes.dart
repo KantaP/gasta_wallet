@@ -8,4 +8,6 @@ class RoutesConstant {
   static const String createAccount = "/create-account";
   static const String setPin = "/set-pin";
   static const String gettingStarted = "/getting-started";
+  static const String otpVerification = "/otp-verficaiton";
+  static const String phoneAuth = "/phone-auth";
 }

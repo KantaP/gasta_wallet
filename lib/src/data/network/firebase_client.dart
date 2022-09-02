@@ -9,26 +9,39 @@ class FirebaseClient {
   final FirebaseDatabase firebaseDatabase = FirebaseDatabase.instance;
   final logger = Logger('firebase');
 
-  Future<bool> createUserWithEmailAndPassword(String email, String password) async {
+  Future<UserCredential?> createUserWithEmailAndPassword(
+      String email, String password) async {
     try {
-       await firebaseAuth.createUserWithEmailAndPassword(email: email.trim(), password: password.trim());
-       return true;
-    } on FirebaseAuthException catch  (e) {
+      final result = await firebaseAuth.createUserWithEmailAndPassword(
+          email: email.trim(), password: password.trim());
+      return result;
+    } on FirebaseAuthException catch (e) {
       logger.warning('Failed with error code: ${e.code}');
       logger.warning(e.message);
-      return false;
+      return null;
     }
   }
 
   Future<void> setValue(String dbRef, Map<String, dynamic> value) async {
     try {
+      DatabaseReference ref = firebaseDatabase.ref(dbRef);
+      await ref.set(value);
+    } on FirebaseAuthException catch (e) {
+      logger.warning('Failed with error code: ${e.code}');
+      logger.warning(e.message);
+      throw e;
+    }
+  }
+
+  Stream<DatabaseEvent> onUserDBValue() {
+    try {
       final user = FirebaseAuth.instance.currentUser;
-      if(user == null) {
+      if (user == null) {
         throw "user not found";
       }
-       DatabaseReference ref = firebaseDatabase.ref(dbRef);
-       await ref.set(value);
-    } on FirebaseAuthException catch  (e) {
+      DatabaseReference ref = firebaseDatabase.ref("user/${user.uid}");
+      return ref.onValue;
+    } on FirebaseAuthException catch (e) {
       logger.warning('Failed with error code: ${e.code}');
       logger.warning(e.message);
       throw e;
@@ -39,12 +52,12 @@ class FirebaseClient {
     return firebaseAuth.currentUser;
   }
 
-  Future<UserCredential> signInWithEmailAndPassword(String email, String password) async {
+  Future<UserCredential> signInWithEmailAndPassword(
+      String email, String password) async {
     try {
-      UserCredential userCredential = await firebaseAuth.signInWithEmailAndPassword(
-        email: email.trim(),
-        password: password.trim()
-      );
+      UserCredential userCredential =
+          await firebaseAuth.signInWithEmailAndPassword(
+              email: email.trim(), password: password.trim());
       return userCredential;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
@@ -56,8 +69,39 @@ class FirebaseClient {
     }
   }
 
-  Future<void> signOut() async {
-    await firebaseAuth.signOut();
-    return;
+  Future<void> signOut() {
+    return firebaseAuth.signOut();
+  }
+
+  Future<DataSnapshot> getData(String dbRef) {
+    try {
+      DatabaseReference ref = firebaseDatabase.ref();
+      return ref.child(dbRef).get();
+    } on FirebaseAuthException catch (e) {
+      logger.warning('Failed with error code: ${e.code}');
+      logger.warning(e.message);
+      throw e;
+    }
+  }
+
+  Future<void> verifyPhoneNumber(
+    String phoneNumber, {
+    required Function(PhoneAuthCredential) verificationCompleted,
+    required Function(FirebaseAuthException) verificationFailed,
+    required Function(String, int?)  codeSent,
+    required Function(String) codeAutoRetrievalTimeout,
+  }) {
+    return firebaseAuth.verifyPhoneNumber(
+        phoneNumber: phoneNumber,
+        timeout: const Duration(seconds: 120),
+        verificationCompleted: verificationCompleted,
+        verificationFailed: verificationFailed,
+        codeSent: codeSent,
+        codeAutoRetrievalTimeout: codeAutoRetrievalTimeout,
+    );
+  }
+
+  Future<UserCredential> signInWithCredential(PhoneAuthCredential credential) async {
+    return firebaseAuth.signInWithCredential(credential);
   }
 }

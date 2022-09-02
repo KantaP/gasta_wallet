@@ -4,9 +4,8 @@ import 'package:gastawallet/src/constants/assets.dart';
 
 class InfoThree extends StatelessWidget {
 
-  final Function() onTap;
 
-  const InfoThree({Key? key, required this.onTap}) : super(key: key);
+  const InfoThree({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,7 @@ class InfoThree extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         const Spacer(),
-        Image.asset(Assets.gettingStarted3),
+        Image.asset(AssetImages.gettingStarted3),
         Text(
           S.of(context).gettingStartedInfoThreeTitle ,
           style: Theme.of(context).textTheme.headlineMedium,
@@ -31,16 +30,16 @@ class InfoThree extends StatelessWidget {
             maxLines: 4,
           ),
         ),
-        const Spacer(),
-        Padding(
-          padding: const EdgeInsets.only(left: 16.0 , right: 16.0 , bottom: 32.0),
-          child: ElevatedButton(
-            onPressed: onTap, 
-            child: Text(
-              S.of(context).gettingStartedInfoThreeButton.toUpperCase()
-            ),
-          ),
-        ),
+        // const Spacer(),
+        // Padding(
+        //   padding: const EdgeInsets.only(left: 16.0 , right: 16.0 , bottom: 32.0),
+        //   child: ElevatedButton(
+        //     onPressed: onTap, 
+        //     child: Text(
+        //       S.of(context).gettingStartedInfoThreeButton.toUpperCase()
+        //     ),
+        //   ),
+        // ),
       ],
     );
   }

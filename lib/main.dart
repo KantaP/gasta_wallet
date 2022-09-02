@@ -17,6 +17,7 @@ void main() async {
     }
   });
   await Firebase.initializeApp(
+    name: "gasta",
     options: DefaultFirebaseOptions.currentPlatform,
   );
   configureInjection(Env.development);

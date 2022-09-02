@@ -15,6 +15,8 @@ class SetPinState implements IPageState<SetPinState> {
 
   String get pin => _pin;
   String get confirmPin => _confirmPin;
+  bool get pinAlready => (_pin.length == 4);
+  bool get confirmPinAlready => _confirmPin.length == 4;
 
   @override
   SetPinState copyWith(Map<String, dynamic> value) {
@@ -22,6 +24,22 @@ class SetPinState implements IPageState<SetPinState> {
       pin: value[SetPinFields.pin] ?? _pin ,
       confirmPin: value[SetPinFields.confirmPin] ?? _confirmPin ,
     );
+  }
+
+  String getPinIndex(int index) {
+    if(pin.isEmpty) return "";
+    if((pin.length - 1) < index) {
+      return "";
+    }
+    return pin.split("")[index];
+  }
+
+  String getConfirmPinIndex(int index) {
+    if(confirmPin.isEmpty) return "";
+    if((confirmPin.length - 1) < index) {
+      return "";
+    }
+    return confirmPin.split("")[index];
   }
 
 }

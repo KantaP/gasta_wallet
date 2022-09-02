@@ -22,7 +22,7 @@ class CardEvent extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               height: 130,
-              child: Image.asset(Assets.logo , fit: BoxFit.fitWidth,),
+              child: Image.asset(AssetImages.logo , fit: BoxFit.fitWidth,),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 24.0),

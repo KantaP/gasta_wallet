@@ -1,4 +1,4 @@
-package org.acromod.prototype
+package org.gasta.wallet
 
 import io.flutter.embedding.android.FlutterActivity
 

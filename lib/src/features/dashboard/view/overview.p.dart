@@ -12,10 +12,21 @@ class _OverViewPageState extends ViewState<OverViewPage , OverViewViewModel> {
   _OverViewPageState(super.viewModel);
 
   @override
+  void initState() {
+    super.initState();
+    listenToRoutesSpecs(viewModel.routes);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Overview Page'),
+        child: ElevatedButton(
+          onPressed: () {
+            viewModel.signOut();
+          },
+          child: Text('Sign out'),
+        ),
       ),
     );
   }

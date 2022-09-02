@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gastawallet/src/constants/assets.dart';
+import 'package:gastawallet/generated/l10n.dart';
 import 'package:gastawallet/src/features/authenticate/view/di/sign_in.vm.dart';
 import 'package:gastawallet/src/view_model/view.abs.dart';
 
-import '../model/sign_in.st.dart';
 
 class SignInPage extends View<SignInPageViewModel> {
   SignInPage({required SignInPageViewModel viewModel, Key? key})
@@ -27,81 +26,69 @@ class _SignInPageState extends ViewState<SignInPage, SignInPageViewModel> {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<SignInPageState>(
-        stream: viewModel.state,
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) return Container();
-          final state = snapshot.data!;
-
-          return Scaffold(
-              backgroundColor: Colors.white,
-              body: SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 32.0),
+    return Scaffold(
+        backgroundColor: Colors.white,
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32.0),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: kToolbarHeight),
+                  child: Center(
+                    child: Text(
+                      S.of(context).signInHeadline,
+                      style: Theme.of(context).textTheme.headlineMedium,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 16),
+                  child: Center(
+                    child: Text(
+                      S.of(context).signInContent,
+                      style: Theme.of(context).textTheme.headlineSmall,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+                Center(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: kToolbarHeight),
-                        child: Center(
-                          child: Image.asset(
-                            Assets.logo,
-                            width: 150,
-                            height: 150,
+                        padding: const EdgeInsets.only(top: 32.0),
+                        child: ElevatedButton(
+                          onPressed: () => viewModel.goToCreateAccount(),
+                          child: Text(
+                            S.of(context).signInCreateAccountButton
                           ),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: TextField(
-                          decoration: const InputDecoration(
-                              labelText: 'Email', isDense: false),
-                          controller: _usernameController,
-                          onChanged: (value) {
-                            viewModel.updateUsername(value);
-                          },
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: TextField(
-                          obscureText: true,
-                          enableSuggestions: false,
-                          autocorrect: false,
-                          decoration: const InputDecoration(
-                              labelText: 'Password', isDense: false),
-                          controller: _passwordController,
-                          onChanged: (value) {
-                            viewModel.updatePassword(value);
-                          },
-                        ),
-                      ),
-                      Center(
-                        child: IntrinsicWidth(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(top: 32.0),
-                                child: ElevatedButton(
-                                  onPressed: () => viewModel.signIn(),
-                                  child: const Text('Sign In'),
-                                ),
+                        padding: const EdgeInsets.only(top: 52.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              S.of(context).signInAlreadyAccountContent, 
+                            ),
+                            const SizedBox(width: 8,),
+                            GestureDetector(
+                              onTap: () => viewModel.goToPhoneAuth(),
+                              child: Text(
+                                S.of(context).signInAlreadyAccountAction
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 16.0),
-                                child: ElevatedButton(
-                                  onPressed: () => viewModel.goToCreateAccount(),
-                                  child: const Text('Create Account'),
-                                ),
-                              )
-                            ],
-                          ),
+                            )
+                          ],
                         ),
                       )
                     ],
                   ),
-                ),
-              ));
-        });
+                )
+              ],
+            ),
+          ),
+        ));
   }
 }

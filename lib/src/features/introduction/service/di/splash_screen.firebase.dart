@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:gastawallet/src/data/network/firebase_client.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logging/logging.dart';
@@ -13,4 +14,5 @@ class SplashScreenFirebaseService {
   User? currentUser() {
     return _firebaseClient.currentUser();
   }
+
 }

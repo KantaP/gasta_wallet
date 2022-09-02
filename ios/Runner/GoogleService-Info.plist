@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>385275291791-b4nqk56aqc086bmg4o61ptq62bkiqf53.apps.googleusercontent.com</string>
+	<string>385275291791-f3sb4bi880qsmvvhi6m8649i7s38ba56.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.385275291791-b4nqk56aqc086bmg4o61ptq62bkiqf53</string>
+	<string>com.googleusercontent.apps.385275291791-f3sb4bi880qsmvvhi6m8649i7s38ba56</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDQb_spiqAgud4ZQ3vz4n3AUtvjSSIKA1Y</string>
 	<key>GCM_SENDER_ID</key>
@@ -19,16 +19,18 @@
 	<key>STORAGE_BUCKET</key>
 	<string>gasta-wallet-dev.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:385275291791:ios:017a114cf60bce928da8fa</string>
+	<string>1:385275291791:ios:721a73db7676d2118da8fa</string>
+	<key>DATABASE_URL</key>
+	<string>https://gasta-wallet-dev-default-rtdb.asia-southeast1.firebasedatabase.app</string>
 </dict>
 </plist>

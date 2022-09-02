@@ -3,7 +3,11 @@ import 'package:gastawallet/src/constants/routes.dart';
 import 'package:gastawallet/src/di/components/injection.dart';
 import 'package:gastawallet/src/features/authenticate/view/create_account.p.dart';
 import 'package:gastawallet/src/features/authenticate/view/di/create_account.vm.dart';
+import 'package:gastawallet/src/features/authenticate/view/di/otp_verification.vm.dart';
+import 'package:gastawallet/src/features/authenticate/view/di/phone_auth.vm.dart';
 import 'package:gastawallet/src/features/authenticate/view/di/set_pin.vm.dart';
+import 'package:gastawallet/src/features/authenticate/view/otp_verification.p.dart';
+import 'package:gastawallet/src/features/authenticate/view/phone_auth.p.dart';
 import 'package:gastawallet/src/features/authenticate/view/set_pin.p.dart';
 import 'package:gastawallet/src/features/authenticate/view/sign_in.p.dart';
 import 'package:gastawallet/src/features/event/view/create_event.p.dart';
@@ -61,6 +65,18 @@ class AppRouter {
           settings: settings,
           builder: (_) => GettingStartedPage(viewModel: getIt<GettingStartedViewModel>()),
         );
+      case RoutesConstant.otpVerification:
+        return MaterialPageRoute(
+          // Make sure to pass `setting` in to ensure the route name is kept 
+          settings: settings,
+          builder: (_) => OtpVerificationPage(viewModel: getIt<OtpVerificationViewModel>()),
+        );
+      case RoutesConstant.phoneAuth: 
+        return MaterialPageRoute(
+          // Make sure to pass `setting` in to ensure the route name is kept 
+          settings: settings,
+          builder: (_) => PhoneAuthPage(viewModel: getIt<PhoneAuthViewModel>()),
+        ); 
       default:
         throw Exception('Route ${settings.name} not implemented');
     }

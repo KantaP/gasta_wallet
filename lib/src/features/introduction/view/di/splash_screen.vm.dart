@@ -1,5 +1,9 @@
+import 'dart:async';
+
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:gastawallet/src/constants/routes.dart';
+import 'package:gastawallet/src/data/local/shared_preferences.dart';
 import 'package:gastawallet/src/features/introduction/model/splash_screen.st.dart';
 import 'package:gastawallet/src/features/introduction/service/di/splash_screen.firebase.dart';
 import 'package:gastawallet/src/view_model/app_routes.dart';
@@ -11,7 +15,8 @@ import 'package:rxdart/subjects.dart';
 class SplashScreenViewModel extends ViewModel {
 
   final SplashScreenFirebaseService _service;
-  SplashScreenViewModel(this._service);
+  final SharedPreferencesHelper _preferencesHelper;
+  SplashScreenViewModel(this._service, this._preferencesHelper);
 
   final _stateSubject = BehaviorSubject<SplashScreenState>.seeded(SplashScreenState());
 
@@ -19,6 +24,7 @@ class SplashScreenViewModel extends ViewModel {
 
   final _routesSubject= PublishSubject<AppRouteSpec>();
   Stream<AppRouteSpec> get routes => _routesSubject;
+
 
   @override
   void dispose() {
@@ -34,9 +40,19 @@ class SplashScreenViewModel extends ViewModel {
     );
   }
 
-  void checkAuth() {
+  void checkAuth() async {
+
+    final passFirstTime = await _preferencesHelper.getPassFirstTime();
+    if(
+      passFirstTime == null ||
+      passFirstTime == false ){
+        showGettingStarted();
+        return;
+    }
+
     User? currentUser = _service.currentUser();
-    if(currentUser != null) {
+    final bool? loggedIn = await _preferencesHelper.getLoggedIn();
+    if(currentUser != null && loggedIn == true && loggedIn != null) {
       Future.delayed(const Duration(milliseconds: 1000), () {
         _routesSubject.add(const AppRouteSpec(name: RoutesConstant.home, action: AppRouteAction.replaceWith));
       });
@@ -52,5 +68,6 @@ class SplashScreenViewModel extends ViewModel {
         _routesSubject.add(const AppRouteSpec(name: RoutesConstant.gettingStarted, action: AppRouteAction.replaceWith));
     });
   }
+
 
 }

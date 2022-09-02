@@ -6,14 +6,20 @@ class CustomTheme {
       primaryColor: Colors.blueAccent,
       scaffoldBackgroundColor: Colors.white,
       appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.blueAccent,
-        foregroundColor: Colors.white,
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black87,
+        shadowColor: Colors.white,
+        titleTextStyle: TextStyle(color: Colors.black87 , fontSize: 20, fontWeight: FontWeight.w700),
+        elevation: 0,
+        centerTitle: true,
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(style: outlineButtonStyle) ,
       elevatedButtonTheme: ElevatedButtonThemeData(style: elevatedButton),
+ 
     );
   }
 }
+
 
 final ButtonStyle elevatedButton =  ElevatedButton.styleFrom(
   primary: Colors.black87,

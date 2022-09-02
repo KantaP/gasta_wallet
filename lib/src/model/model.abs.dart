@@ -8,3 +8,8 @@ abstract class ModelMap<T> {
   T fromMap(Map<String, dynamic> json);
   Map<String , dynamic> toMap(T json);
 }
+
+
+abstract class Model<T> {
+  T copyWith(Map<String, dynamic> value);
+}

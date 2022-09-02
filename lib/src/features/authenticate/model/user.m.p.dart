@@ -12,8 +12,9 @@ class UserModelPersistence implements ModelJson<UserModel> {
   UserModel fromJson(Map<String, dynamic> json) {
     return UserModel(
       id: json['id'] ?? 0,
-      username: json['username'] ?? "",
-      password: json['password'] ?? "",
+      uid: json['uid'] ?? "",
+      actionSetPin: json['actionSetPin'] ?? 0,
+      pin: json['pin'] ?? "",
     );
   }
   
@@ -21,8 +22,18 @@ class UserModelPersistence implements ModelJson<UserModel> {
   Map<String, dynamic> toJson(UserModel json) {
     return <String, dynamic> {
       "id" : json.id,
-      "username" : json.username,
-      "password" : json.password
+      "uid" : json.uid,
+      "actionSetPin" : json.actionSetPin,
+      "pin" : json.pin
+    };
+  }
+
+  Map<String, dynamic> toLocalData(UserModel json) {
+    return <String, dynamic> {
+      "uid" : json.uid,
+      "actionSetPin" : json.actionSetPin ,
+      "pin" : json.pin
     };
   }
 }
+

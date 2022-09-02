@@ -1,10 +1,47 @@
 {
   "project_info": {
     "project_number": "385275291791",
+    "firebase_url": "https://gasta-wallet-dev-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "gasta-wallet-dev",
     "storage_bucket": "gasta-wallet-dev.appspot.com"
   },
   "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385275291791:android:771dc0bd3c5169d38da8fa",
+        "android_client_info": {
+          "package_name": "org.gasta.wallet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "385275291791-1oicv0pbda73dq5viof0fbvg9kcnbrm2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfVbdALI1_1YAzToDI4SX9S5txuh44YvI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "385275291791-1oicv0pbda73dq5viof0fbvg9kcnbrm2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "385275291791-afn7qp5pi48b7qfd0ritvonugtve2tb2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.acromod.prototype"
+              }
+            }
+          ]
+        }
+      }
+    },
     {
       "client_info": {
         "mobilesdk_app_id": "1:385275291791:android:58df794b57aead838da8fa",

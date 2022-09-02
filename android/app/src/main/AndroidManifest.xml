@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.acromod.prototype">
+    package="org.gasta.wallet">
    <application
         android:label="prototype"
         android:name="${applicationName}"

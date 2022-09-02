@@ -11,8 +11,9 @@ import 'package:path/path.dart';
 class UserDataSource extends DataSource<UserModel> {
   String tableName = "users";
   String columnId = "_id";
-  String columnUsername = "username";
-  String columnPassword = "password";
+  String columnActionSetPin = "actionSetPin";
+  String columnUid = "uid";
+  String columnPin = "pin";
 
   late Database _db;
 
@@ -24,8 +25,7 @@ class UserDataSource extends DataSource<UserModel> {
 
   @override
   Future<int> delete(int id) {
-    // TODO: implement delete
-    throw UnimplementedError();
+    return _db.delete(tableName , where: '$columnId = ?' , whereArgs: [id]);
   }
 
   @override
@@ -35,8 +35,9 @@ class UserDataSource extends DataSource<UserModel> {
     return await _db.execute('''
       CREATE TABLE IF NOT EXISTS $tableName (
         $columnId integer primary key autoincrement,
-        $columnUsername text not null,
-        $columnPassword text not null
+        $columnUid text not null,
+        $columnActionSetPin INTEGER,
+        $columnPin text null
       )
       ''').then((value) {
       logger.fine('$tableName table created');
@@ -53,7 +54,7 @@ class UserDataSource extends DataSource<UserModel> {
         where: filters.keys.map((key) => '$key = ?').join(' AND '),
         whereArgs: filters.values.toList(),
       );
-      if (maps.length > 0) {
+      if (maps.isNotEmpty) {
         return UserModelPersistence().fromArrayJson(maps);
       }
       return null;
@@ -70,11 +71,12 @@ class UserDataSource extends DataSource<UserModel> {
 
   @override
   Future<UserModel> insert(UserModel item) async {
-    item.id = await _db.insert(
+    final id = await _db.insert(
       tableName,
-      <String, dynamic>{"username": item.username, "password": item.password},
+      UserModelPersistence().toLocalData(item),
       conflictAlgorithm: ConflictAlgorithm.replace
     );
+    item.setId(id);
     return item;
   }
 
@@ -85,7 +87,11 @@ class UserDataSource extends DataSource<UserModel> {
 
   @override
   Future<int> update(UserModel item) {
-    // TODO: implement update
-    throw UnimplementedError();
+    return _db.update(
+      tableName, 
+      UserModelPersistence().toLocalData(item),
+      where: '$columnId = ?',
+      whereArgs: [item.id]
+    );
   }
 }

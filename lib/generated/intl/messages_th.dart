@@ -22,20 +22,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "gettingStartedInfoOneButton":
-            MessageLookupByLibrary.simpleMessage("Next"),
         "gettingStartedInfoOneContent": MessageLookupByLibrary.simpleMessage(
             "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien."),
         "gettingStartedInfoOneTitle":
             MessageLookupByLibrary.simpleMessage("Take hold of your finances"),
-        "gettingStartedInfoThreeButton":
-            MessageLookupByLibrary.simpleMessage("Get Started"),
         "gettingStartedInfoThreeContent": MessageLookupByLibrary.simpleMessage(
             "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien."),
         "gettingStartedInfoThreeTitle":
             MessageLookupByLibrary.simpleMessage("Smart trading tools"),
-        "gettingStartedInfoTwoButton":
-            MessageLookupByLibrary.simpleMessage("Next"),
         "gettingStartedInfoTwoContent": MessageLookupByLibrary.simpleMessage(
             "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien."),
         "gettingStartedInfoTwoTitle":
